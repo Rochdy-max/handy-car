@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>IDirectiveInterpretor module</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=05dadb3a"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Recherche" href="search.html" />
+  <link rel="next" title="IloRobotConnector module" href="IloRobotConnector.html" />
+  <link rel="prev" title="IBotConnector module" href="IBotConnector.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">Handy Car</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="modules.html#src">src</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="BotDirective.html" class="reference internal ">BotDirective module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="HandImageInterpretor.html" class="reference internal ">HandImageInterpretor module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="IBotConnector.html" class="reference internal ">IBotConnector module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">IDirectiveInterpretor module</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#module-IDirectiveInterpretor" class="reference internal">IDirectiveInterpretor module</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="IloRobotConnector.html" class="reference internal ">IloRobotConnector module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="KeyboardKeyInterpretor.html" class="reference internal ">KeyboardKeyInterpretor module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="MainApp.html" class="reference internal ">MainApp module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="MbotConnector.html" class="reference internal ">MbotConnector module</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="modules.html">src</a> &raquo;</li>
+    
+    <li>IDirectiveInterpretor module</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="IBotConnector.html"
+       title="Chapitre précédent">← IBotConnector module</a>
+  </li>
+  <li class="next">
+    <a href="IloRobotConnector.html"
+       title="Chapitre suivant">IloRobotConnector module →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="module-IDirectiveInterpretor">
+<span id="idirectiveinterpretor-module"></span><h1>IDirectiveInterpretor module<a class="headerlink" href="#module-IDirectiveInterpretor" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="IDirectiveInterpretor.IDirectiveInterpretor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IDirectiveInterpretor.</span></span><span class="sig-name descname"><span class="pre">IDirectiveInterpretor</span></span><a class="reference internal" href="_modules/IDirectiveInterpretor.html#IDirectiveInterpretor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IDirectiveInterpretor.IDirectiveInterpretor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="IDirectiveInterpretor.IDirectiveInterpretor.interpret">
+<span class="sig-name descname"><span class="pre">interpret</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IDirectiveInterpretor.html#IDirectiveInterpretor.interpret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IDirectiveInterpretor.IDirectiveInterpretor.interpret" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="IBotConnector.html"
+       title="Chapitre précédent">← IBotConnector module</a>
+  </li>
+  <li class="next">
+    <a href="IloRobotConnector.html"
+       title="Chapitre suivant">IloRobotConnector module →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2024, Rochdy BACHABI &amp; Rochdyath BACHABI.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
