@@ -1,7 +1,8 @@
 from BotDirective import BotDirective
 from IDirectiveInterpretor import IDirectiveInterpretor
 
-class HandImageInterpretor(IDirectiveInterpretor):
+@IDirectiveInterpretor.register
+class HandImageInterpretor:
     def __init__(self):
         pass
 

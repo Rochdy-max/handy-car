@@ -1,7 +1,8 @@
 from BotDirective import BotDirective
 from IBotConnector import IBotConnector
 
-class IloRobotConnector(IBotConnector):
+@IBotConnector.register
+class IloRobotConnector:
     def __init__(self):
         pass
 

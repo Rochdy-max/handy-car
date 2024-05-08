@@ -1,7 +1,8 @@
 from BotDirective import BotDirective
 from IDirectiveInterpretor import IDirectiveInterpretor
 
-class KeyboardKeyInterpretor(IDirectiveInterpretor):
+@IDirectiveInterpretor.register
+class KeyboardKeyInterpretor:
     def __init__(self):
         pass
 

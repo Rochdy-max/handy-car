@@ -1,8 +1,10 @@
+from abc import ABC, abstractmethod
 from BotDirective import BotDirective
 
-class IDirectiveInterpretor:
-    def __init(self):
+class IDirectiveInterpretor(ABC):
+    def __init__(self):
         pass
-    
+
+    @abstractmethod
     def interpret(self):
         pass
