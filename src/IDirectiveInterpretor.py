@@ -6,5 +6,8 @@ class IDirectiveInterpretor(ABC):
         pass
 
     @abstractmethod
-    def interpret(self):
+    def interpret(self) -> BotDirective:
+        """
+        Poll event and interpret it into a BotDirective 
+        """
         pass

@@ -4,7 +4,7 @@ import cv2 as cv
 from cvzone.HandTrackingModule import HandDetector
 
 @IDirectiveInterpretor.register
-class HandImageInterpretor:
+class HandImageInterpretor(IDirectiveInterpretor):
     def __init__(self, cap = None, *, display_cap=False, window_name = None, debug=False):
         # Init video capture
         if not cap:
