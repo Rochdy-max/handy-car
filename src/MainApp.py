@@ -42,25 +42,24 @@ class MainApp(metaclass=MainAppMeta):
             raise AttributeError("value is not an instance of valid type: %s" % IDirectiveInterpretor.__name__)
         self._directive_interpretor = value
 
-    def main(self, argv):
-        self.bot_connector = IloRobotConnector()
-        
-        vcap = cv.VideoCapture(0)
-        self.directive_interpretor = HandImageInterpretor(vcap, display_cap=True)
-
-        try:
-            while True:
-                current_directive = self.directive_interpretor.poll_directive()
-                self.bot_connector.send_directive(current_directive)
-        except KeyboardInterrupt:
-            pass
-        return 0
-
     def config(self):
         pass
 
     def loop(self):
-        pass
+        current_directive = self.directive_interpretor.poll_directive()
+        self.bot_connector.send_directive(current_directive)
+
+    def main(self, argv):
+        self.bot_connector = IloRobotConnector()
+        vcap = cv.VideoCapture(0)
+        self.directive_interpretor = HandImageInterpretor(vcap, display_cap=True)
+        self.config()
+        while True:
+            try:
+                self.loop()
+            except KeyboardInterrupt:
+                break
+        return 0
 
 if __name__ == "__main__":
     app = MainApp()
