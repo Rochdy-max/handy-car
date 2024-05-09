@@ -50,7 +50,7 @@ class MainApp(metaclass=MainAppMeta):
 
         try:
             while True:
-                current_directive = self.directive_interpretor.interpret()
+                current_directive = self.directive_interpretor.poll_directive()
                 self.bot_connector.send_directive(current_directive)
         except KeyboardInterrupt:
             pass

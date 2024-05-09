@@ -6,5 +6,5 @@ class KeyboardKeyInterpretor(IDirectiveInterpretor):
     def __init__(self):
         pass
 
-    def interpret(self):
+    def poll_directive(self):
         pass

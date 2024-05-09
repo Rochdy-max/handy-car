@@ -38,7 +38,7 @@ class HandImageInterpretor(IDirectiveInterpretor):
             raise RuntimeError('Impossible to read video capture')
         return img
 
-    def interpret(self) -> BotDirective:
+    def poll_directive(self) -> BotDirective:
         img = self.get_image()
 
         hands, img = self.detector.findHands(img, draw=True, flipType=True)
