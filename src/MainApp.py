@@ -51,17 +51,7 @@ class MainApp(metaclass=MainAppMeta):
         try:
             while True:
                 current_directive = self.directive_interpretor.interpret()
-                match current_directive:
-                    case BotDirective.GO_FORWARD:
-                        print("Go Forward")
-                    case BotDirective.GO_BACKWARD:
-                        print("Go Backward")
-                    case BotDirective.TURN_LEFT:
-                        print("Turn Left")
-                    case BotDirective.TURN_RIGHT:
-                        print("Turn Right")
-                    case BotDirective.STOP:
-                        print("Stop")
+                self.bot_connector.send_directive(current_directive)
         except KeyboardInterrupt:
             pass
         return 0
