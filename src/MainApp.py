@@ -1,4 +1,5 @@
 import sys
+import cv2 as cv
 from BotDirective import BotDirective
 from IBotConnector import IBotConnector
 from IDirectiveInterpretor import IDirectiveInterpretor
@@ -43,7 +44,9 @@ class MainApp(metaclass=MainAppMeta):
 
     def main(self, argv):
         self.bot_connector = IloRobotConnector()
-        self.directive_interpretor = HandImageInterpretor()
+        
+        vcap = cv.VideoCapture(0)
+        self.directive_interpretor = HandImageInterpretor(vcap, display_cap=True)
 
         try:
             while True:

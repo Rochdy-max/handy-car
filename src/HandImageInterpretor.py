@@ -5,9 +5,11 @@ from cvzone.HandTrackingModule import HandDetector
 
 @IDirectiveInterpretor.register
 class HandImageInterpretor:
-    def __init__(self, *, display_cap=False, debug=False):
+    def __init__(self, cap = None, *, display_cap=False, debug=False):
         # Init video capture
-        self.cap = cv.VideoCapture(0)
+        if not cap:
+            cap = cv.VideoCapture(0)
+        self.cap = cap
 
         self.display_cap = display_cap # Boolean for displaying captured image or not
         self.debug = debug # Boolean for displaying debug info or not
