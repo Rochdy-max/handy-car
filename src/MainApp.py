@@ -42,6 +42,25 @@ class MainApp(metaclass=MainAppMeta):
         self._directive_interpretor = value
 
     def main(self, argv):
+        self.bot_connector = IloRobotConnector()
+        self.directive_interpretor = HandImageInterpretor()
+
+        try:
+            while True:
+                current_directive = self.directive_interpretor.interpret()
+                match current_directive:
+                    case BotDirective.GO_FORWARD:
+                        print("Go Forward")
+                    case BotDirective.GO_BACKWARD:
+                        print("Go Backward")
+                    case BotDirective.TURN_LEFT:
+                        print("Turn Left")
+                    case BotDirective.TURN_RIGHT:
+                        print("Turn Right")
+                    case BotDirective.STOP:
+                        print("Stop")
+        except KeyboardInterrupt:
+            pass
         return 0
 
     def config(self):
