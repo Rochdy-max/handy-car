@@ -29,7 +29,7 @@ class MainApp(metaclass=MainAppMeta):
     @bot_connector.setter
     def bot_connector(self, value):
         if not isinstance(value, IBotConnector):
-            raise TypeError("value is not an instance of valid type: %s" % IBotConnector.__name__)
+            raise AttributeError("value is not an instance of valid type: %s" % IBotConnector.__name__)
         self._bot_connector = value
 
     @property
@@ -39,7 +39,7 @@ class MainApp(metaclass=MainAppMeta):
     @directive_interpretor.setter
     def directive_interpretor(self, value):
         if not isinstance(value, IDirectiveInterpretor):
-            raise TypeError("value is not an instance of valid type: %s" % IDirectiveInterpretor.__name__)
+            raise AttributeError("value is not an instance of valid type: %s" % IDirectiveInterpretor.__name__)
         self._directive_interpretor = value
 
     def main(self, argv):
