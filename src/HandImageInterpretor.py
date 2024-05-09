@@ -1,20 +1,18 @@
 from BotDirective import BotDirective
 from IDirectiveInterpretor import IDirectiveInterpretor
-import cv2
+import cv2 as cv
 from cvzone.HandTrackingModule import HandDetector
 
 @IDirectiveInterpretor.register
 class HandImageInterpretor:
     def __init__(self, *, display_cap=False, debug=False):
-        # Init attributes bounded to parameters
-        self.display_cap = display_cap
-        self.debug = debug
-
         # Init video capture
-        self.cap = cv2.VideoCapture(0)
-        # Set the frame width and height in pixels
-        self.cap.set(3, 640)
-        self.cap.set(4, 480)
+        self.cap = cv.VideoCapture(0)
+
+        self.display_cap = display_cap # Boolean for displaying captured image or not
+        self.debug = debug # Boolean for displaying debug info or not
+        self.window_name = "Handy-Car" # Name of the imshow window
+        self.window_closed = False # Boolean for window closing or not (initially False)
 
         # Init hand detector
         self.detector = HandDetector(staticMode=False, maxHands=2, modelComplexity=1, detectionCon=0.5, minTrackCon=0.5)
@@ -22,7 +20,7 @@ class HandImageInterpretor:
     def get_image(self):
         success, img = self.cap.read()
         if not success:
-            print('Impossible to read capture')
+            raise RuntimeError('Impossible to read video capture')
         return img
 
     def interpret(self) -> BotDirective:
@@ -30,9 +28,11 @@ class HandImageInterpretor:
 
         hands, img = self.detector.findHands(img, draw=True, flipType=True)
 
-        if self.display_cap:
-            cv2.imshow("Handy-Car", img)
-            cv2.waitKey(1)
+        if self.display_cap and not self.window_closed:
+            cv.imshow(self.window_name, img)
+            cv.waitKey(1)
+            if cv.getWindowProperty(self.window_name, cv.WND_PROP_VISIBLE) < 1:
+                self.window_closed = True
 
         if hands:
             # Information for the first hand detected
