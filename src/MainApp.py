@@ -21,9 +21,25 @@ class MainAppMeta(type):
         return cls
 
 class MainApp(metaclass=MainAppMeta):
-    def __init__(self) -> None:
-        self.bot_connector = None
-        self.directive_interpretor = None
+    @property
+    def bot_connector(self):
+        return self._bot_connector
+
+    @bot_connector.setter
+    def bot_connector(self, value):
+        if not isinstance(value, IBotConnector):
+            raise TypeError("value is not an instance of valid type: %s" % IBotConnector.__name__)
+        self._bot_connector = value
+
+    @property
+    def directive_interpretor(self):
+        return self._directive_interpretor
+
+    @directive_interpretor.setter
+    def directive_interpretor(self, value):
+        if not isinstance(value, IDirectiveInterpretor):
+            raise TypeError("value is not an instance of valid type: %s" % IDirectiveInterpretor.__name__)
+        self._directive_interpretor = value
 
     def main(self, argv):
         return 0
