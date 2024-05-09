@@ -1,5 +1,7 @@
 from BotDirective import BotDirective
 from IDirectiveInterpretor import IDirectiveInterpretor
+import cv2
+from cvzone.HandTrackingModule import HandDetector
 
 @IDirectiveInterpretor.register
 class HandImageInterpretor:
@@ -9,5 +11,7 @@ class HandImageInterpretor:
     def get_image(self):
         pass
 
-    def interpret(self):
+    def interpret(self) -> BotDirective:
         pass
+
+print(cv2.__version__)
