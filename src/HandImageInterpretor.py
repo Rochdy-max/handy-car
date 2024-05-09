@@ -19,6 +19,16 @@ class HandImageInterpretor:
         # Init hand detector
         self.detector = HandDetector(staticMode=False, maxHands=2, modelComplexity=1, detectionCon=0.5, minTrackCon=0.5)
 
+    @property
+    def cap(self):
+        return self._cap
+
+    @cap.setter
+    def cap(self, vcap):
+        if not vcap.isOpened():
+            raise AttributeError("Video capture unavailable")
+        self._cap = vcap
+
     def get_image(self):
         success, img = self.cap.read()
         if not success:
