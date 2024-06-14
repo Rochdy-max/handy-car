@@ -1,10 +1,11 @@
-import sys
+import json
 import cv2 as cv
 from BotDirective import BotDirective
 from IBotConnector import IBotConnector
 from IDirectiveInterpretor import IDirectiveInterpretor
 from IloRobotConnector import IloRobotConnector
 from HandImageInterpretor import HandImageInterpretor
+from KeyboardKeyInterpretor import KeyboardKeyInterpretor
 
 class MainAppMeta(type):
     _instances = dict()
@@ -42,17 +43,54 @@ class MainApp(metaclass=MainAppMeta):
             raise AttributeError("value is not an instance of valid type: %s" % IDirectiveInterpretor.__name__)
         self._directive_interpretor = value
 
+    def create_instannces(self, robot, control):
+        if robot == "ILO Robot": self.bot_connector = IloRobotConnector()
+        else: self.bot_connector = MbotConnector()
+
+        if control == "Keyboard": self.directive_interpretor = KeyboardKeyInterpretor()
+        else:
+            vcap = cv.VideoCapture(0)
+            self.directive_interpretor = HandImageInterpretor(vcap, display_cap=True)
+
+        return (robot, control)
+
     def config(self):
-        pass
+        file_path = "config.json"
+        try:
+            with open(file_path, 'r') as file:
+                data = json.load(file)
+                robot = data.get("Robot")
+                control = data.get("Control")
+                
+                if robot is None or control is None:
+                    raise ValueError("Les clés 'Robot' et 'Control' sont obligatoires dans le fichier JSON.")
+                
+                robot_options = ["MBOT2", "ILO Robot"]
+                control_options = ["Hand", "Keyboard"]
+                
+                robot = next((r for r in robot_options if r.lower() == robot.lower()), None)
+                control = next((c for c in control_options if c.lower() == control.lower()), None)
+                
+                if robot is None:
+                    raise ValueError("La valeur pour 'Robot' dans le fichier JSON n'est pas valide.")
+                if control is None:
+                    raise ValueError("La valeur pour 'Control' dans le fichier JSON n'est pas valide.")
+                
+                self.create_instannces(robot, control)
+                return (True)
+        except FileNotFoundError:
+            print("Le fichier spécifié n'a pas été trouvé.")
+        except json.JSONDecodeError:
+            print("Le fichier spécifié n'est pas au format JSON valide.")
+        except ValueError as e:
+            print(e)
+        return None
 
     def loop(self):
         current_directive = self.directive_interpretor.poll_directive()
         self.bot_connector.send_directive(current_directive)
 
     def main(self, argv):
-        self.bot_connector = IloRobotConnector()
-        vcap = cv.VideoCapture(0)
-        self.directive_interpretor = HandImageInterpretor(vcap, display_cap=True)
         self.config()
         while True:
             try:
@@ -60,7 +98,3 @@ class MainApp(metaclass=MainAppMeta):
             except KeyboardInterrupt:
                 break
         return 0
-
-if __name__ == "__main__":
-    app = MainApp()
-    sys.exit(app.main(sys.argv))
