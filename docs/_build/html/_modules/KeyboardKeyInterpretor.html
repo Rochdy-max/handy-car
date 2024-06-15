@@ -1,122 +1,278 @@
 <!DOCTYPE html>
-
-<html lang="fr" data-content_root="../">
+<html  lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KeyboardKeyInterpretor &#8212; Documentation Handy Car 1.0.0</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
-    <script src="../_static/documentation_options.js?v=05dadb3a"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/translations.js?v=d99ca74e"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>KeyboardKeyInterpretor</title>
+    
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="../_static/documentation_options.js?v=05dadb3a"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=d99ca74e"></script>
 
-  
-  
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Recherche" href="../search.html" /> 
+  </head>
 
-  </head><body>
-  
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <span class="site-name">Handy Car</span>
+    
+  </router-link>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
+          <navlinks>
+            
 
-          <div class="body" role="main">
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../modules.html#src">src</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../BotDirective.html" class="reference internal ">BotDirective module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../HandImageInterpretor.html" class="reference internal ">HandImageInterpretor module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../IBotConnector.html" class="reference internal ">IBotConnector module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../IDirectiveInterpretor.html" class="reference internal ">IDirectiveInterpretor module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../IloRobotConnector.html" class="reference internal ">IloRobotConnector module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../KeyboardKeyInterpretor.html" class="reference internal ">KeyboardKeyInterpretor module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../MainApp.html" class="reference internal ">MainApp module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="../MbotConnector.html" class="reference internal ">MbotConnector module</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="index.html">Code du module</a> &raquo;</li>
+    
+    <li>KeyboardKeyInterpretor</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
             
   <h1>Code source de KeyboardKeyInterpretor</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">BotDirective</span> <span class="kn">import</span> <span class="n">BotDirective</span>
 <span class="kn">from</span> <span class="nn">IDirectiveInterpretor</span> <span class="kn">import</span> <span class="n">IDirectiveInterpretor</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="k">try</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">pynput</span> <span class="kn">import</span> <span class="n">keyboard</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error import pynput&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="KeyboardController">
+<a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardController">[docs]</a>
+<span class="k">class</span> <span class="nc">KeyboardController</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette classe nous permet de lire les touches du clavier qui ont été touchés, particulièrement les touches directives haut, bas, gauche et droite.</span>
+
+<span class="sd">    :ivar current_dir: Le premier nombre.</span>
+<span class="sd">    :type current_dir: BotDirective</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">NOTHING</span>
+    
+<div class="viewcode-block" id="KeyboardController.on_press">
+<a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardController.on_press">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cette fonction change la valeur de current_dir selon la touche du clavier qui a été ou qui est pressée.</span>
+
+<span class="sd">        :param key: La touche du clavier pressée.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">GO_FORWARD</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">down</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">GO_BACKWARD</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">TURN_LEFT</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">TURN_RIGHT</span></div>
+
+
+<div class="viewcode-block" id="KeyboardController.on_release">
+<a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardController.on_release">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cette fonction change la valeur de current_dir à BotDirective.NOTHING si l&#39;une des touches directionnelles a été lachée.</span>
+
+<span class="sd">        :param key: La touche du clavier lachée.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">NOTHING</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">down</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">NOTHING</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">NOTHING</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">BotDirective</span><span class="o">.</span><span class="n">NOTHING</span></div>
+</div>
+
+
 
 <div class="viewcode-block" id="KeyboardKeyInterpretor">
 <a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardKeyInterpretor">[docs]</a>
+<span class="nd">@IDirectiveInterpretor</span><span class="o">.</span><span class="n">register</span>
 <span class="k">class</span> <span class="nc">KeyboardKeyInterpretor</span><span class="p">(</span><span class="n">IDirectiveInterpretor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette classe nous permet d&#39;envoyer les directives au robot.</span>
+
+<span class="sd">    :ivar controller: La classe nous permettant de lire les touches du clavier. </span>
+<span class="sd">    :type controller: KeyboardController</span>
+<span class="sd">    :ivar listener:</span>
+<span class="sd">    :type listener:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">controller</span> <span class="o">=</span> <span class="n">KeyboardController</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">listener</span> <span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">Listener</span><span class="p">(</span>
+            <span class="n">on_press</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">on_press</span><span class="p">,</span>
+            <span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">on_release</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">listener</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<div class="viewcode-block" id="KeyboardKeyInterpretor.get_image">
-<a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardKeyInterpretor.get_image">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span></div>
-
-
-<div class="viewcode-block" id="KeyboardKeyInterpretor.interpret">
-<a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardKeyInterpretor.interpret">[docs]</a>
-    <span class="k">def</span> <span class="nf">interpret</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span></div>
+<div class="viewcode-block" id="KeyboardKeyInterpretor.poll_directive">
+<a class="viewcode-back" href="../KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.KeyboardKeyInterpretor.poll_directive">[docs]</a>
+    <span class="k">def</span> <span class="nf">poll_directive</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BotDirective</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cette fonction nous permet d&#39;envoyer les directives au robot.</span>
+<span class="sd">        </span>
+<span class="sd">        :return: La direction que prendra le robot.</span>
+<span class="sd">        :rtype: BotDirective</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">listener</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">current_dir</span></div>
 </div>
 
 </pre></div>
 
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Handy Car</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">src</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Code du module</a><ul>
-  </ul></li>
-  </ul></li>
-</ul>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2024, Rochdy BACHABI &amp; Rochdyath BACHABI.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;2024, Rochdy BACHABI & Rochdyath BACHABI.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
-      
-    </div>
-
+            </div>
+          </div>
+      </page>
+    </div></div>
     
-
     
   </body>
 </html>

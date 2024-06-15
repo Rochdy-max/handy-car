@@ -190,11 +190,12 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="IDirectiveInterpretor.IDirectiveInterpretor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IDirectiveInterpretor.</span></span><span class="sig-name descname"><span class="pre">IDirectiveInterpretor</span></span><a class="reference internal" href="_modules/IDirectiveInterpretor.html#IDirectiveInterpretor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IDirectiveInterpretor.IDirectiveInterpretor" title="Link to this definition">¶</a></dt>
-<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="IDirectiveInterpretor.IDirectiveInterpretor.interpret">
-<span class="sig-name descname"><span class="pre">interpret</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IDirectiveInterpretor.html#IDirectiveInterpretor.interpret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IDirectiveInterpretor.IDirectiveInterpretor.interpret" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="IDirectiveInterpretor.IDirectiveInterpretor.poll_directive">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">poll_directive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BotDirective.html#BotDirective.BotDirective" title="BotDirective.BotDirective"><span class="pre">BotDirective</span></a></span></span><a class="reference internal" href="_modules/IDirectiveInterpretor.html#IDirectiveInterpretor.poll_directive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IDirectiveInterpretor.IDirectiveInterpretor.poll_directive" title="Link to this definition">¶</a></dt>
+<dd><p>Poll event and interpret it into a BotDirective</p>
+</dd></dl>
 
 </dd></dl>
 

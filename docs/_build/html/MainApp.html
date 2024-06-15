@@ -191,9 +191,34 @@
 <dt class="sig sig-object py" id="MainApp.MainApp">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MainApp.</span></span><span class="sig-name descname"><span class="pre">MainApp</span></span><a class="reference internal" href="_modules/MainApp.html#MainApp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MainApp.MainApp" title="Link to this definition">¶</a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="MainApp.MainApp.bot_connector">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bot_connector</span></span><a class="headerlink" href="#MainApp.MainApp.bot_connector" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="MainApp.MainApp.config">
 <span class="sig-name descname"><span class="pre">config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MainApp.html#MainApp.config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MainApp.MainApp.config" title="Link to this definition">¶</a></dt>
+<dd><p>Cette fonction initialise les attributs bot_connector et directive_interpretor selon la configuration dans le fichier config.json.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainApp.MainApp.create_instannces">
+<span class="sig-name descname"><span class="pre">create_instannces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MainApp.html#MainApp.create_instannces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MainApp.MainApp.create_instannces" title="Link to this definition">¶</a></dt>
+<dd><p>Cette fonction initialise les attributs bot_connector et directive_interpretor selon les paramètres robot et control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<em>str</em>) – chaîne de caractères variant entre « MBOT2 » et « ILO Robot »</p></li>
+<li><p><strong>control</strong> (<em>str</em>) – chaîne de caractères variant entre « Hand » et « Keyboard »</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="MainApp.MainApp.directive_interpretor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">directive_interpretor</span></span><a class="headerlink" href="#MainApp.MainApp.directive_interpretor" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -203,9 +228,15 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="MainApp.MainApp.main">
-<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MainApp.html#MainApp.main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MainApp.MainApp.main" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MainApp.html#MainApp.main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MainApp.MainApp.main" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MainApp.MainAppMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MainApp.</span></span><span class="sig-name descname"><span class="pre">MainAppMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MainApp.html#MainAppMeta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MainApp.MainAppMeta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
 </dd></dl>
 
 </section>

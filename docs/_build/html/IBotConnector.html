@@ -190,26 +190,30 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="IBotConnector.IBotConnector">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IBotConnector.</span></span><span class="sig-name descname"><span class="pre">IBotConnector</span></span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector" title="Link to this definition">¶</a></dt>
-<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="IBotConnector.IBotConnector.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.connect" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.connect" title="Link to this definition">¶</a></dt>
+<dd><p>Connect to the bot</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="IBotConnector.IBotConnector.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.disconnect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.disconnect" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.disconnect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.disconnect" title="Link to this definition">¶</a></dt>
+<dd><p>Disconnect from the bot</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="IBotConnector.IBotConnector.get_state">
-<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.get_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.get_state" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.get_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.get_state" title="Link to this definition">¶</a></dt>
+<dd><p>Get state info (any sensor or camera output) from the bot</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="IBotConnector.IBotConnector.send_directive">
-<span class="sig-name descname"><span class="pre">send_directive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.send_directive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.send_directive" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_directive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/IBotConnector.html#IBotConnector.send_directive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IBotConnector.IBotConnector.send_directive" title="Link to this definition">¶</a></dt>
+<dd><p>Send a directive to the bot</p>
+</dd></dl>
 
 </dd></dl>
 

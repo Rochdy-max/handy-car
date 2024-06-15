@@ -1,5 +1,7 @@
 import json
-import cv2 as cv
+try:
+    import cv2 as cv
+except: print("error import cv2")
 from BotDirective import BotDirective
 from IBotConnector import IBotConnector
 from IDirectiveInterpretor import IDirectiveInterpretor
@@ -44,6 +46,14 @@ class MainApp(metaclass=MainAppMeta):
         self._directive_interpretor = value
 
     def create_instannces(self, robot, control):
+        """
+        Cette fonction initialise les attributs bot_connector et directive_interpretor selon les paramètres robot et control.
+        
+        :param robot: chaîne de caractères variant entre "MBOT2" et "ILO Robot"
+        :type robot: str
+        :param control: chaîne de caractères variant entre "Hand" et "Keyboard"
+        :type control: str
+        """
         if robot == "ILO Robot": self.bot_connector = IloRobotConnector()
         else: self.bot_connector = MbotConnector()
 
@@ -55,6 +65,9 @@ class MainApp(metaclass=MainAppMeta):
         return (robot, control)
 
     def config(self):
+        """
+        Cette fonction initialise les attributs bot_connector et directive_interpretor selon la configuration dans le fichier config.json.
+        """
         file_path = "config.json"
         try:
             with open(file_path, 'r') as file:
