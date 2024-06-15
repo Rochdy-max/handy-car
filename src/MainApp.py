@@ -1,5 +1,7 @@
 import json
-import cv2 as cv
+try:
+    import cv2 as cv
+except: print("error import cv2")
 from BotDirective import BotDirective
 from IBotConnector import IBotConnector
 from IDirectiveInterpretor import IDirectiveInterpretor

@@ -1,7 +1,8 @@
 from BotDirective import BotDirective
 from IDirectiveInterpretor import IDirectiveInterpretor
 from time import time
-from pynput import keyboard
+try: from pynput import keyboard
+except: print("error import pynput")
 
 
 class KeyboardController:

@@ -188,18 +188,65 @@
   <section id="module-KeyboardKeyInterpretor">
 <span id="keyboardkeyinterpretor-module"></span><h1>KeyboardKeyInterpretor module<a class="headerlink" href="#module-KeyboardKeyInterpretor" title="Link to this heading">¶</a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">KeyboardKeyInterpretor.</span></span><span class="sig-name descname"><span class="pre">KeyboardController</span></span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardController" title="Link to this definition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Cette classe nous permet de lire les touches du clavier qui ont été touchés, particulièrement les touches directives haut, bas, gauche et droite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_dir</strong> – Le premier nombre.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardController.on_press">
+<span class="sig-name descname"><span class="pre">on_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardController.on_press"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardController.on_press" title="Link to this definition">¶</a></dt>
+<dd><p>Cette fonction change la valeur de current_dir selon la touche du clavier qui a été ou qui est pressée.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – La touche du clavier pressée.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardController.on_release">
+<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardController.on_release"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardController.on_release" title="Link to this definition">¶</a></dt>
+<dd><p>Cette fonction change la valeur de current_dir à BotDirective.NOTHING si l’une des touches directionnelles a été lachée.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – La touche du clavier lachée.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardKeyInterpretor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">KeyboardKeyInterpretor.</span></span><span class="sig-name descname"><span class="pre">KeyboardKeyInterpretor</span></span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardKeyInterpretor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardKeyInterpretor" title="Link to this definition">¶</a></dt>
 <dd><p>Bases : <a class="reference internal" href="IDirectiveInterpretor.html#IDirectiveInterpretor.IDirectiveInterpretor" title="IDirectiveInterpretor.IDirectiveInterpretor"><code class="xref py py-class docutils literal notranslate"><span class="pre">IDirectiveInterpretor</span></code></a></p>
+<p>Cette classe nous permet d’envoyer les directives au robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – La classe nous permettant de lire les touches du clavier.</p></li>
+<li><p><strong>listener</strong> – </p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardKeyInterpretor.get_image">
-<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardKeyInterpretor.get_image" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardKeyInterpretor.interpret">
-<span class="sig-name descname"><span class="pre">interpret</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.interpret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardKeyInterpretor.interpret" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="KeyboardKeyInterpretor.KeyboardKeyInterpretor.poll_directive">
+<span class="sig-name descname"><span class="pre">poll_directive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BotDirective.html#BotDirective.BotDirective" title="BotDirective.BotDirective"><span class="pre">BotDirective</span></a></span></span><a class="reference internal" href="_modules/KeyboardKeyInterpretor.html#KeyboardKeyInterpretor.poll_directive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#KeyboardKeyInterpretor.KeyboardKeyInterpretor.poll_directive" title="Link to this definition">¶</a></dt>
+<dd><p>Cette fonction nous permet d’envoyer les directives au robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>La direction que prendra le robot.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BotDirective.html#BotDirective.BotDirective" title="BotDirective.BotDirective">BotDirective</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

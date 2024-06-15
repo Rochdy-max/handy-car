@@ -1,7 +1,9 @@
 from BotDirective import BotDirective
 from IDirectiveInterpretor import IDirectiveInterpretor
-import cv2 as cv
-from cvzone.HandTrackingModule import HandDetector
+try:
+    import cv2 as cv
+    from cvzone.HandTrackingModule import HandDetector
+except: print("error import cv2 and cvzone")
 
 @IDirectiveInterpretor.register
 class HandImageInterpretor(IDirectiveInterpretor):
