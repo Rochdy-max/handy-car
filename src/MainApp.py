@@ -106,9 +106,11 @@ class MainApp(metaclass=MainAppMeta):
 
     def main(self, argv):
         self.config()
+        self.bot_connector.connect()
         while True:
             try:
                 self.loop()
             except KeyboardInterrupt:
                 break
+        self.bot_connector.disconnect()
         return 0
