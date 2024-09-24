@@ -20,7 +20,7 @@ class IBotConnector(ABC):
         pass
     
     @abstractmethod
-    def send_directive(self):
+    def send_directive(self, directive):
         """
         Send a directive to the bot
         """
