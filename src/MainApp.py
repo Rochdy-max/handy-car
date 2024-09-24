@@ -6,6 +6,7 @@ from BotDirective import BotDirective
 from IBotConnector import IBotConnector
 from IDirectiveInterpretor import IDirectiveInterpretor
 from IloRobotConnector import IloRobotConnector
+from MbotConnector import MbotConnector
 from HandImageInterpretor import HandImageInterpretor
 from KeyboardKeyInterpretor import KeyboardKeyInterpretor
 
@@ -45,7 +46,7 @@ class MainApp(metaclass=MainAppMeta):
             raise AttributeError("value is not an instance of valid type: %s" % IDirectiveInterpretor.__name__)
         self._directive_interpretor = value
 
-    def create_instannces(self, robot, control):
+    def create_instances(self, robot, control):
         """
         Cette fonction initialise les attributs bot_connector et directive_interpretor selon les paramètres robot et control.
         
@@ -89,7 +90,7 @@ class MainApp(metaclass=MainAppMeta):
                 if control is None:
                     raise ValueError("La valeur pour 'Control' dans le fichier JSON n'est pas valide.")
                 
-                self.create_instannces(robot, control)
+                self.create_instances(robot, control)
                 return (True)
         except FileNotFoundError:
             print("Le fichier spécifié n'a pas été trouvé.")
